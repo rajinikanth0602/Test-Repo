@@ -1,1 +1,14 @@
 
+name: Master push CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-qa-debug:
+    runs-on: [ default ]
+    steps:
+      - name: Log Build Metadata
+        run: |
+          echo "Commit SHA: ${{ github.sha }}"
